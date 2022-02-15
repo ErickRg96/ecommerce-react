@@ -10,7 +10,7 @@ const Product = ({ cartProducts, setCartProducts }) => {
     useEffect(() => {
         const getProduct = async () => {
             const res = await axios.get(
-                `http://localhost:5000/ecommerce-api-65178/us-central1/app/api/product/${id}`
+                `https://us-central1-ecommerce-api-65178.cloudfunctions.net/app/api/product/${id}`
             );
             setProduct(res.data);
         };

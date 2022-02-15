@@ -11,7 +11,7 @@ const Products = () => {
     useEffect(() => {
         const getProducts = async () => {
             const res = await axios.get(
-                "http://localhost:5000/ecommerce-api-65178/us-central1/app/api/products"
+                "https://us-central1-ecommerce-api-65178.cloudfunctions.net/app/api/products"
             );
             setProducts(res.data);
 
