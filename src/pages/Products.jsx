@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import MessageCard from "../components/MessageCard";
+import Spinner from "../components/Spinner";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getProducts = async () => {
@@ -12,6 +14,10 @@ const Products = () => {
                 "http://localhost:5000/ecommerce-api-65178/us-central1/app/api/products"
             );
             setProducts(res.data);
+
+            setTimeout(() => {
+                setLoading(!loading);
+            }, 1000);
         };
 
         getProducts();
@@ -19,7 +25,9 @@ const Products = () => {
 
     return (
         <main className="p-3 md:py-5 lg:px-4 lg:py-10 2xl:max-w-screen-xl my-0 mx-auto">
-            {products && products.length ? (
+            {loading ? (
+                <Spinner />
+            ) : products && products.length ? (
                 <div className="flex flex-col">
                     <span className="capitalize text-right text-lg">
                         {products.length} productos
