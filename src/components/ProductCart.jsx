@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const ProductCart = ({ product, cartProducts, setCartProducts }) => {
     const navigate = useNavigate();
@@ -35,6 +37,7 @@ const ProductCart = ({ product, cartProducts, setCartProducts }) => {
                     className="mt-2 p-3 uppercase font-medium rounded-lg border-2 border-granite text-granite hover:bg-granite hover:text-white ease-in duration-300"
                     onClick={onDeleteProduct}
                 >
+                    <FontAwesomeIcon icon={faTrash} className="mr-2" />
                     Eliminar
                 </button>
             </section>

@@ -1,8 +1,29 @@
+import { useState, useEffect } from "react";
+
 const ProductDetail = ({ product, cartProducts, setCartProducts }) => {
     const { image, name, price, id } = product;
+    const [onCart, setOnCart] = useState(false);
+
+    useEffect(() => {
+        if (cartProducts.find((cartProduct) => cartProduct.id === id)) {
+            setOnCart(true);
+        } else {
+            setOnCart(false);
+        }
+    }, [id]);
 
     const onSaveProduct = () => {
+        setOnCart(true);
         setCartProducts([...cartProducts, product]);
+    };
+
+    const onDeleteProduct = () => {
+        const cartProductsUpdated = cartProducts.filter(
+            (cartProduct) => cartProduct.id !== id
+        );
+
+        setOnCart(false);
+        setCartProducts(cartProductsUpdated);
     };
 
     return (
@@ -18,12 +39,22 @@ const ProductDetail = ({ product, cartProducts, setCartProducts }) => {
                 </span>
                 <br />
                 <span className="text-red text-3xl mt-6 block">${price}</span>
-                <button
-                    className="mt-10 px-10 py-3 uppercase font-medium rounded-lg border-2 border-violet-red text-violet-red hover:bg-violet-red hover:text-white ease-in duration-300"
-                    onClick={onSaveProduct}
-                >
-                    agregar al carrito
-                </button>
+
+                {onCart ? (
+                    <button
+                        className="mt-10 px-10 py-3 uppercase font-medium rounded-lg border-2 border-granite text-granite hover:bg-granite hover:text-white ease-in duration-300 w-full md:w-fit"
+                        onClick={onDeleteProduct}
+                    >
+                        Eliminar de carrito
+                    </button>
+                ) : (
+                    <button
+                        className="mt-10 px-10 py-3 uppercase font-medium rounded-lg border-2 border-violet-red text-violet-red hover:bg-violet-red hover:text-white ease-in duration-300 w-full md:w-fit"
+                        onClick={onSaveProduct}
+                    >
+                        agregar al carrito
+                    </button>
+                )}
             </section>
         </article>
     );
