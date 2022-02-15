@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -9,6 +9,17 @@ import NotFound from "./pages/NotFound";
 
 const App = () => {
     const [cartProducts, setCartProducts] = useState([]);
+
+    useEffect(() => {
+        const cartProductLS =
+            JSON.parse(localStorage.getItem("cartProducts")) ?? [];
+        setCartProducts(cartProductLS);
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+    }, [cartProducts]);
+
     return (
         <BrowserRouter>
             <Routes>
