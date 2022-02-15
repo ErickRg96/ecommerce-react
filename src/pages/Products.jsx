@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "../components/ProductCard";
+import MessageCard from "../components/MessageCard";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -30,7 +31,7 @@ const Products = () => {
                     </section>
                 </div>
             ) : (
-                <p>No hay productos en existencia</p>
+                <MessageCard message="No hay productos en existencia" />
             )}
         </main>
     );
