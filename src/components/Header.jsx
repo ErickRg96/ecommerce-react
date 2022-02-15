@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
     return (
@@ -11,6 +12,11 @@ const Header = () => {
                         Ecommerce
                     </h1>
                 </Link>
+
+                <div className="hidden lg:inline w-1/2">
+                    <SearchBar />
+                </div>
+
                 <div className="flex items-center">
                     <Link to="/products">
                         <span className="text-md lg:text-xl font-light text-white mr-4 xl:mr-8">

@@ -12,12 +12,12 @@ const ProductDetail = ({ product, cartProducts, setCartProducts }) => {
         }
     }, [id]);
 
-    const onSaveProduct = () => {
+    const handleSaveProduct = () => {
         setOnCart(true);
         setCartProducts([...cartProducts, product]);
     };
 
-    const onDeleteProduct = () => {
+    const handleDeleteProduct = () => {
         const cartProductsUpdated = cartProducts.filter(
             (cartProduct) => cartProduct.id !== id
         );
@@ -43,14 +43,14 @@ const ProductDetail = ({ product, cartProducts, setCartProducts }) => {
                 {onCart ? (
                     <button
                         className="mt-10 px-10 py-3 uppercase font-medium rounded-lg border-2 border-granite text-granite hover:bg-granite hover:text-white ease-in duration-300 w-full md:w-fit"
-                        onClick={onDeleteProduct}
+                        onClick={handleDeleteProduct}
                     >
                         Eliminar de carrito
                     </button>
                 ) : (
                     <button
                         className="mt-10 px-10 py-3 uppercase font-medium rounded-lg border-2 border-violet-red text-violet-red hover:bg-violet-red hover:text-white ease-in duration-300 w-full md:w-fit"
-                        onClick={onSaveProduct}
+                        onClick={handleSaveProduct}
                     >
                         agregar al carrito
                     </button>

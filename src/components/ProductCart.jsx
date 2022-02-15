@@ -6,7 +6,7 @@ const ProductCart = ({ product, cartProducts, setCartProducts }) => {
     const navigate = useNavigate();
     const { name, price, image, id } = product;
 
-    const onDeleteProduct = () => {
+    const handleDeleteProduct = () => {
         const cartProductsUpdated = cartProducts.filter(
             (cartProduct) => cartProduct.id !== id
         );
@@ -35,7 +35,7 @@ const ProductCart = ({ product, cartProducts, setCartProducts }) => {
                 <br />
                 <button
                     className="mt-2 p-3 uppercase font-medium rounded-lg border-2 border-granite text-granite hover:bg-granite hover:text-white ease-in duration-300"
-                    onClick={onDeleteProduct}
+                    onClick={handleDeleteProduct}
                 >
                     <FontAwesomeIcon icon={faTrash} className="mr-2" />
                     Eliminar

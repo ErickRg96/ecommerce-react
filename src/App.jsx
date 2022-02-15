@@ -4,6 +4,7 @@ import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Product from "./pages/Product";
+import Search from "./pages/Search";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 
@@ -35,6 +36,7 @@ const App = () => {
                             />
                         }
                     />
+                    <Route path="search/:keyword" element={<Search />} />
                     <Route
                         path="cart"
                         element={
