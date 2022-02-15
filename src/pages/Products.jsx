@@ -20,10 +20,10 @@ const Products = () => {
         <main className="p-3 md:py-5 lg:px-4 lg:py-10 2xl:max-w-screen-xl my-0 mx-auto">
             {products && products.length ? (
                 <div className="flex flex-col">
-                    <span className="capitalize text-right">
+                    <span className="capitalize text-right text-lg">
                         {products.length} productos
                     </span>
-                    <section className="mt-5 grid gap-2 grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+                    <section className="mt-5 grid gap-y-6 gap-x-4 grid-cols-2 md:grid-cols-3 md:gap-y-8 md:gap-x-6 xl:grid-cols-4">
                         {products.map((product) => (
                             <ProductCard key={product.id} product={product} />
                         ))}
