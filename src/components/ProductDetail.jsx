@@ -28,7 +28,7 @@ const ProductDetail = ({ product, cartProducts, setCartProducts }) => {
 
     return (
         <article className="flex flex-col md:flex-row">
-            <img src={image} className="h-fit w-full md:w-3/5 mb-2" />
+            <img src={image} className="max-h-125" />
             <section className="md:w-2/5 md:ml-8">
                 <span className="capitalize mt-4 text-black text-2xl ">
                     {name}
