@@ -18,7 +18,7 @@ const ProductCart = ({ product, cartProducts, setCartProducts }) => {
         <article className="flex mb-12 md:mb-14">
             <img
                 src={image}
-                className="h-fit w-1/3 md:w-1/4 cursor-pointer"
+                className="w-1/3 md:w-1/4 cursor-pointer"
                 onClick={() => navigate(`/product/${id}`)}
             />
             <section className="w-2/3 md:w-3/4 ml-5">
