@@ -17,6 +17,7 @@
 -   React Font Awesome
 -   AWS Functions
 -   AWS Firestore Database
+-   Local Storage
 
 ## How install
 
