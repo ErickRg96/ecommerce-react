@@ -1,7 +1,11 @@
 module.exports = {
     content: ["index.html", "./src/**/*.jsx"],
     theme: {
-        extend: {},
+        extend: {
+            maxHeight: {
+                150: "37.5rem",
+            },
+        },
         colors: {
             transparent: "transparent",
             current: "currentColor",

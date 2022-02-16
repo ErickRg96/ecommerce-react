@@ -1,11 +1,13 @@
+import Hero from "../components/Hero";
 import SearchBar from "../components/SearchBar";
 
 const Home = () => {
     return (
         <>
-            <div className="lg:hidden">
+            <section className="lg:hidden">
                 <SearchBar />
-            </div>
+            </section>
+            <Hero />
         </>
     );
 };
